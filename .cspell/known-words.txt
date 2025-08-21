@@ -1,0 +1,8 @@
+Axner
+commitlint
+lefthook
+prerender
+sonarjs
+storyblok
+supernaut
+vitest

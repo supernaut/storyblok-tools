@@ -1,0 +1,31 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-24.04
+    env:
+      COREPACK_INTEGRITY_KEYS: 0
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Get pnpm version
+        run: echo "PNPM_VERSION=$(cat package.json | jq .volta.pnpm)" >> "$GITHUB_ENV"
+      - name: Enable pnpm with corepack
+        run: corepack enable && corepack prepare pnpm@${{env.PNPM_VERSION}} --activate 
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: './package.json'
+          cache: pnpm
+          cache-dependency-path: "pnpm-lock.yaml"
+      - name: Install npm dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Validate current commit (last commit) with commitlint
+        if: github.event_name == 'push'
+        run: pnpm commitlint --last --verbose
+      - name: Validate PR commits with commitlint
+        if: github.event_name == 'pull_request'
+        run: pnpm commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose

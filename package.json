@@ -1,0 +1,108 @@
+{
+  "name": "@supernaut/storyblok-tools",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Storyblok tools for Next.js",
+  "keywords": [
+    "nextjs",
+    "storyblok",
+    "typescript",
+    "react"
+  ],
+  "homepage": "https://github.com/supernaut/storyblok-tools#readme",
+  "bugs": {
+    "url": "https://github.com/supernaut/storyblok-tools/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/supernaut/storyblok-tools.git"
+  },
+  "license": "ISC",
+  "author": "Johannes Axner <johannes@axner.io>",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./is-storyblok-request": {
+      "import": "./dist/is-storyblok-request.mjs",
+      "require": "./dist/is-storyblok-request.js"
+    }
+  },
+  "files": [
+    "dist",
+    "readme.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "prepublishOnly": "pnpm build",
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix --quiet",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "dev": "tsup --watch",
+    "cz": "czg",
+    "format": "prettier --write ."
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "packageManager": "pnpm@10.15.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "volta": {
+    "node": "22.18.0",
+    "pnpm": "10.15.0"
+  },
+  "peerDependencies": {
+    "next": "^15.x",
+    "react": "^18.x || ^19.x",
+    "react-dom": "^18.x || ^19.x"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.33.0",
+    "@next/eslint-plugin-next": "^15.5.0",
+    "@types/node": "^24.3.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "conventional-changelog": "^7.1.1",
+    "czg": "^1.12.0",
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-perfectionist": "^4.15.0",
+    "eslint-plugin-sonarjs": "^3.0.4",
+    "eslint-plugin-unused-imports": "^4.2.0",
+    "globals": "^16.3.0",
+    "lefthook": "^1.12.3",
+    "next": "^15.5.0",
+    "prettier": "3.6.2",
+    "prop-types": "^15.8.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.40.0",
+    "vitest": "^3.2.4"
+  }
+}

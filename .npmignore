@@ -1,0 +1,43 @@
+# Source files (only publish dist)
+src/
+*.ts
+*.tsx
+!dist/
+
+# Development files
+.vscode/
+.github/
+.git/
+node_modules/
+*.log
+*.lock
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# Config files
+tsconfig.json
+tsup.config.ts 
+commitlint.config.js
+lefthook.json
+renovate.json
+.gitignore
+.editorconfig
+
+# Test files
+**/*.test.*
+**/*.spec.*
+__tests__/
+coverage/
+
+# Build artifacts that shouldn't be published
+*.tgz
+dist/**/*.map
+
+# Keep these
+!dist/
+!package.json
+!readme.md
+!README.md
+!LICENSE
+!CHANGELOG.md
