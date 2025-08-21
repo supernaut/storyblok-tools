@@ -26,11 +26,13 @@
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./is-storyblok-request": {
       "import": "./dist/is-storyblok-request.mjs",
-      "require": "./dist/is-storyblok-request.js"
+      "require": "./dist/is-storyblok-request.js",
+      "types": "./dist/is-storyblok-request.d.ts"
     }
   },
   "files": [
