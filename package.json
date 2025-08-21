@@ -1,7 +1,7 @@
 {
   "name": "@supernaut/storyblok-tools",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Storyblok tools for Next.js",
   "keywords": [
     "nextjs",
