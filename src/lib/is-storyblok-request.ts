@@ -25,16 +25,27 @@ export async function isStoryblokRequest(
     const tokenKey = "_storyblok_tk[token]";
     const spaceIdKey = "_storyblok_tk[space_id]";
     const timestampKey = "_storyblok_tk[timestamp]";
-
-    if (
-      !query.has(tokenKey) ||
-      !query.get(tokenKey) ||
-      !query.has(spaceIdKey) ||
-      !query.get(spaceIdKey) ||
-      !query.has(timestampKey) ||
-      !query.get(timestampKey) ||
-      !process.env["STORYBLOK_PREVIEW_TOKEN"]
-    ) {
+    // Individual guard clauses for clearer logic & better branch coverage instrumentation
+    if (!query.has(tokenKey)) {
+      return false; // missing token param entirely
+    }
+    if (!query.get(tokenKey)) {
+      return false; // empty token value
+    }
+    if (!query.has(spaceIdKey)) {
+      return false; // missing space id param
+    }
+    if (!query.get(spaceIdKey)) {
+      return false; // empty space id
+    }
+    if (!query.has(timestampKey)) {
+      return false; // missing timestamp param
+    }
+    if (!query.get(timestampKey)) {
+      return false; // empty timestamp
+    }
+    // Maintain existing behavior: require env variable presence even if argument provided
+    if (!process.env["STORYBLOK_PREVIEW_TOKEN"]) {
       return false;
     }
 
