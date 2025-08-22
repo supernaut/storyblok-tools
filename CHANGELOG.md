@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/supernaut/storyblok-tools/compare/v1.1.0...v1.1.1) (2025-08-22)
+
+### Bug Fixes
+
+- improve export order ([4d09791](https://github.com/supernaut/storyblok-tools/commit/4d09791f4eca64afb766590ab69334d6ab4c2f8b))
+
 ## [1.1.0](https://github.com/supernaut/storyblok-tools/compare/v1.0.1...v1.1.0) (2025-08-22)
 
 ### Bug Fixes
