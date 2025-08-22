@@ -1,6 +1,6 @@
 # Storyblok Tools
 
-Tools to simplify recurring tasks when working with [Storyblok](https://www.storyblok.com/).
+Tools to simplify recurring tasks when working with [Storyblok](https://www.storyblok.com/) in [Next.js](https://nextjs.org/).
 
 ## Usage
 
