@@ -1,7 +1,7 @@
 {
   "name": "@supernaut/storyblok-tools",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Storyblok tools for Next.js",
   "keywords": [
     "nextjs",
@@ -18,7 +18,11 @@
     "url": "https://github.com/supernaut/storyblok-tools.git"
   },
   "license": "ISC",
-  "author": "Johannes Axner <johannes@axner.io>",
+  "author": {
+    "name": "Johannes Axner",
+    "email": "johannes@axner.io",
+    "url": "https://github.com/supernaut"
+  },
   "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -89,6 +93,8 @@
     "@vitest/coverage-v8": "^3.2.4",
     "@vitest/ui": "^3.2.4",
     "conventional-changelog": "^7.1.1",
+    "conventional-changelog-cli": "^5.0.0",
+    "conventional-changelog-conventionalcommits": "^9.1.0",
     "czg": "^1.12.0",
     "eslint": "^9.33.0",
     "eslint-config-prettier": "^10.1.8",

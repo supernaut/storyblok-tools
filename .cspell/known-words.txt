@@ -1,5 +1,6 @@
 Axner
 commitlint
+conventionalcommits
 lefthook
 prerender
 sonarjs
