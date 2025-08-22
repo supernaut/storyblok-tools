@@ -25,7 +25,10 @@ jobs:
           cache-dependency-path: "pnpm-lock.yaml"
       - name: Install packages
         run: pnpm install --frozen-lockfile
-      - run: pnpm test
+      - name: Run tests
+        run: pnpm test
+      - name: Build
+        run: pnpm build
       - uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.NPM_TOKEN }}

@@ -1,8 +1,7 @@
 # Source files (only publish dist)
 src/
 *.ts
-*.tsx
-!dist/
+*.tsx 
 
 # Development files
 .vscode/
@@ -36,6 +35,9 @@ dist/**/*.map
 
 # Keep these
 !dist/
+!dist/**/*.js
+!dist/**/*.cjs
+!dist/**/*.d.ts
 !package.json
 !readme.md
 !README.md
