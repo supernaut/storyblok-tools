@@ -24,19 +24,19 @@
     "url": "https://github.com/supernaut"
   },
   "sideEffects": false,
+  "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     },
     "./is-storyblok-request": {
+      "types": "./dist/is-storyblok-request.d.ts",
       "import": "./dist/is-storyblok-request.mjs",
-      "require": "./dist/is-storyblok-request.js",
-      "types": "./dist/is-storyblok-request.d.ts"
+      "require": "./dist/is-storyblok-request.js"
     }
   },
   "files": [
@@ -60,7 +60,8 @@
     "clean": "rm -rf dist",
     "dev": "tsup --watch",
     "cz": "czg",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "changelog": "pnpm dlx conventional-changelog-cli -i 'CHANGELOG.md' -s -t v -p conventionalcommits"
   },
   "config": {
     "commitizen": {
